@@ -1,0 +1,85 @@
+﻿@model Cinema.Models.Cinemaa
+
+<div class="container py-4">
+    <div class="cinema-form-container">
+        <div class="cinema-form-header">
+            <h1 class="cinema-form-title">
+                <i class="fas fa-film"></i> Edit  Cinemaa
+            </h1>
+            <p class="cinema-form-subtitle">Please fill all required fields to register your cinema</p>
+        </div>
+
+        <div class="cinema-form-card">
+            <form method="post" class="cinema-form">
+                <!-- Cinemaa Name -->
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" asp-for="Name" id="Name" placeholder=" " required>
+                    <label for="Name">Cinemaa Name</label>
+                    <span asp-validation-for="Name" class="validation-message"></span>
+                    <i class="fas fa-theater-masks input-icon"></i>
+                </div>
+
+                <!-- Cinemaa Address -->
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" asp-for="Address" id="Address" placeholder=" " required>
+                    <label for="Address">Address</label>
+                    <span asp-validation-for="Address" class="validation-message"></span>
+                    <i class="fas fa-map-marker-alt input-icon"></i>
+                </div>
+
+                <div class="row">
+                    <!-- Cinemaa City -->
+                    <div class="col-md-6">
+                        <div class="form-group floating-label">
+                            <input type="text" class="form-control" asp-for="City" id="City" placeholder=" " required>
+                            <label for="City">City</label>
+                            <span asp-validation-for="City" class="validation-message"></span>
+                            <i class="fas fa-city input-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Cinemaa Country -->
+                    <div class="col-md-6">
+                        <div class="form-group floating-label">
+                            <input type="text" class="form-control" asp-for="Country" id="Country" placeholder=" " required>
+                            <label for="Country">Country</label>
+                            <span asp-validation-for="Country" class="validation-message"></span>
+                            <i class="fas fa-globe-americas input-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" asp-for="PhoneNumber" id="PhoneNumber" placeholder=" " required>
+                    <label for="PhoneNumber">Phone Number</label>
+                    <span asp-validation-for="PhoneNumber" class="validation-message"></span>
+                    <i class="fas fa-phone input-icon"></i>
+                </div>
+
+                <!-- Films Selection -->
+                <div class="form-group">
+                    <label for="CinemaFilms">Select Films</label>
+                    <select asp-for="CinemaFilms" class="form-select" multiple="multiple" id="CinemaFilms" required>
+                        <option value="" disabled selected>Select Films</option>
+                        @foreach (var film in ViewData["films"] as List<Film>)
+                        {
+                            <option value="@film.Id">@film.Title</option>
+                        }
+                    </select>
+                    <span asp-validation-for="CinemaFilms" class="validation-message"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-plus-circle"></i> Edit Cinemaa
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

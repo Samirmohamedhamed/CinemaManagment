@@ -1,0 +1,15 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+
+# App settings
+appsettings.json
+
+# System files
+Thumbs.db
+.DS_Store

@@ -1,0 +1,103 @@
+﻿@using Cinema.Models.ViewModel
+@model AdminCreateUserVM
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="display-6">Create New User</div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Admin/Dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/Admin/User">Users</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="All" class="alert alert-danger"></div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="UserName" class="form-label fw-bold">Username *</label>
+                                    <input class="form-control" asp-for="UserName" placeholder="Enter username">
+                                    <span asp-validation-for="UserName" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Email" class="form-label fw-bold">Email *</label>
+                                    <input type="email" class="form-control" asp-for="Email" placeholder="Enter email">
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Password" class="form-label fw-bold">Password *</label>
+                                    <input type="password" class="form-control" asp-for="Password" placeholder="Enter password">
+                                    <span asp-validation-for="Password" class="text-danger small"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="ConfirmPassword" class="form-label fw-bold">Confirm Password *</label>
+                                    <input type="password" class="form-control" asp-for="ConfirmPassword" placeholder="Confirm password">
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Address" class="form-label fw-bold">Address</label>
+                            <input class="form-control" asp-for="Address" placeholder="Enter address">
+                            <span asp-validation-for="Address" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="RoleOfUser" class="form-label fw-bold">User Role *</label>
+                            <select asp-for="RoleOfUser" class="form-select">
+                                <option value="">-- Select Role --</option>
+                                @if (ViewBag.Roles != null)
+                                {
+                                    foreach (var item in ViewBag.Roles)
+                                    {
+                                                <option value="@item">@item</option>
+                                    }
+                                }
+                                else
+                                {
+                                        <option disabled>No roles available</option>
+                                }
+                            </select>
+                            <span asp-validation-for="RoleOfUser" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="/Admin/User" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-user-plus me-1"></i> Create User
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+}

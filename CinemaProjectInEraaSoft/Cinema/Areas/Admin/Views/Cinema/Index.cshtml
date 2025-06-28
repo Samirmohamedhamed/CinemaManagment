@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Cinemaa>
+
+<div class="container py-4">
+    <div class="cinema-header">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="cinema-title">
+                <i class="fas fa-film me-2"></i>All Cinemas
+            </h1>
+            <a href="/Admin/Cinema/Create" class="btn btn-success btn-add">
+                <i class="fas fa-plus-circle me-2"></i>Add New Cinema
+            </a>
+        </div>
+    </div>
+
+    <div class="cinema-table-container">
+        <div class="table-responsive">
+            <table class="table cinema-table table-hover align-middle">
+                <thead class="cinema-table-header">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Rating</th>
+                        <th scope="col" class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="cinema-table-row">
+                            <th scope="row" class="cinema-id">@item.Id</th>
+                            <td class="cinema-name">@item.Name</td>
+                            <td class="cinema-address">@item.Address</td>
+                            <td class="cinema-city">@item.City</td>
+                            <td class="cinema-country">@item.Country</td>
+                            <td class="cinema-phone">@item.PhoneNumber</td>
+                            <td class="cinema-rating">
+                                <span class="rating-badge">@item.Rating</span>
+                            </td>
+                            <td class="text-end">
+                                <div class="action-buttons">
+                                    <a href="/Admin/Cinema/Edit/@item.Id" class="btn btn-sm btn-edit">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <a href="javascript:void(0);" onclick="confirmDelete(@item.Id)" class="btn btn-sm btn-delete">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Delete Cinema?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel',
+            backdrop: `
+                rgba(0,0,0,0.7)
+                url("/images/cinema-popup.gif")
+                center top
+                no-repeat
+            `,
+            customClass: {
+                confirmButton: 'btn btn-danger px-4',
+                cancelButton: 'btn btn-secondary px-4'
+            },
+            buttonsStyling: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Show loading animation
+                Swal.fire({
+                    title: 'Deleting...',
+                    html: 'Please wait while we delete the cinema',
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    }
+                });
+
+                // Redirect after delay for better UX
+                setTimeout(() => {
+                    window.location.href = `/Admin/Cinema/Delete/${id}`;
+                }, 1000);
+            }
+        });
+    }
+
+    // Add animation to table rows
+    document.addEventListener('DOMContentLoaded', function () {
+        const rows = document.querySelectorAll('.cinema-table-row');
+
+        rows.forEach((row, index) => {
+            // Add delay based on row index
+            row.style.animationDelay = `${index * 0.05}s`;
+            row.classList.add('animate__animated', 'animate__fadeInUp');
+        });
+    });
+</script>

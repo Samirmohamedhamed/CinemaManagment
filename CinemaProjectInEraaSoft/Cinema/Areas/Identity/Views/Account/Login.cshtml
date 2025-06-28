@@ -1,0 +1,46 @@
+﻿@using Cinema.Models.ViewModel
+@model LoginVM
+<div class="container py-4">
+    <div>
+        <div>
+            <form method="post" class="actor-form" enctype="multipart/form-data">
+                <div class="text-bg-danger" asp-validation-summary="All"> </div>
+                <!-- Full Name -->
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" asp-for="UserNameOrEmail" id="UserName" placeholder=" " required>
+                    <label for="UserNameOrEmail">UserNameOrEmail</label>
+                    <span asp-validation-for="UserNameOrEmail" class="validation-message"></span>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" asp-for="Password" id="Password" placeholder=" " required>
+                    <label for="Password">Password</label>
+                    <span asp-validation-for="Password" class="validation-message"></span>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+                <div class="form-group floating-label">
+                    <select class="form-control" asp-for="RememberMe" id="RememberMe" required>
+                        <option value="">-- Select --</option>
+                        <option value="true">On</option>
+                        <option value="false">Off</option>
+                    </select>
+                    <label for="RememberMe">Remember Me</label>
+                    <span asp-validation-for="RememberMe" class="validation-message"></span>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+                <div>
+                    <a href="/Identity/Account/ResendEmail">Resend Email Confrmation</a>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-plus-circle"></i> Submit
+                    </button>
+                </div>
+                <div>
+                    <a href="/Identity/Account/ForgetPassword">Forget Password</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

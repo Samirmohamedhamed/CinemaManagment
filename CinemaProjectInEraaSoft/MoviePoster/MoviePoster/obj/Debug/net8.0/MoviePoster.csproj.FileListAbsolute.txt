@@ -1,0 +1,14 @@
+D:\C# train file\MoviePoster\MoviePoster\bin\Debug\net8.0\MoviePoster.exe
+D:\C# train file\MoviePoster\MoviePoster\bin\Debug\net8.0\MoviePoster.deps.json
+D:\C# train file\MoviePoster\MoviePoster\bin\Debug\net8.0\MoviePoster.runtimeconfig.json
+D:\C# train file\MoviePoster\MoviePoster\bin\Debug\net8.0\MoviePoster.dll
+D:\C# train file\MoviePoster\MoviePoster\bin\Debug\net8.0\MoviePoster.pdb
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.AssemblyInfoInputs.cache
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.AssemblyInfo.cs
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.csproj.CoreCompileInputs.cache
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.dll
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\refint\MoviePoster.dll
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.pdb
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\MoviePoster.genruntimeconfig.cache
+D:\C# train file\MoviePoster\MoviePoster\obj\Debug\net8.0\ref\MoviePoster.dll

@@ -1,0 +1,91 @@
+﻿
+
+
+
+body {
+    background-color: #121212; /* خلفية سمراء داكنة */
+    color: #e0e0e0;
+}
+
+.cinema-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/cinema-bg.jpg') center/cover no-repeat;
+    padding: 5rem 0;
+}
+
+.filter-section {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.form-control, .form-select {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+}
+
+    .form-control:focus, .form-select:focus {
+        background-color: #333;
+        color: #fff;
+        border-color: #ff8c00;
+        box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
+    }
+
+.film-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .film-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-color: #ff8c00;
+    }
+
+.genre-badge {
+    background: linear-gradient(135deg, #ff6b00, #ff8c00);
+    color: white;
+}
+
+.film-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.card-title {
+    color: #fff;
+}
+
+.text-muted {
+    color: #aaa !important;
+}
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #121212;
+    }
+
+.actors-list a {
+    color: #ffa502;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .actors-list a:hover {
+        color: #ff8c00;
+        text-decoration: underline;
+    }
+
+.btn-outline-light {
+    border-color: #fff;
+    color: #fff;
+}
+
+    .btn-outline-light:hover {
+        background-color: #fff;
+        color: #000;
+    }

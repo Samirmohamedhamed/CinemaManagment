@@ -1,0 +1,24 @@
+﻿@using Cinema.Models.ViewModel
+@model ResendEmailVM
+<div class="container py-4">
+    <div>
+        <div>
+            <form method="post" class="actor-form" enctype="multipart/form-data">
+                <div class="text-bg-danger" asp-validation-summary="All"> </div>
+                <!-- Full Name -->
+                <div class="form-group floating-label">
+                    <input type="text" class="form-control" asp-for="UserNameOrEmail" id="UserName" placeholder=" " required>
+                    <label for="UserNameOrEmail">UserNameOrEmail</label>
+                    <span asp-validation-for="UserNameOrEmail" class="validation-message"></span>
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-plus-circle"></i> Add Actor
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+﻿@model Dictionary<ApplicationUser,string>
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-6 d-flex align-items-center">
+            <div class="display-6 mb-0 text-light">All Users</div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <a href="/Admin/User/Create" class="btn btn-success">
+                <i class="fas fa-plus-circle me-1"></i> Create New User
+            </a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-dark">
+        <div class="card-body p-0 bg-dark">
+            <div class="table-responsive">
+                <table class="table table-hover table-dark mb-0">
+                    <thead class="bg-secondary text-light">
+                        <tr>
+                            <th scope="col" width="5%">#</th>
+                            <th scope="col" width="25%">Name</th>
+                            <th scope="col" width="25%">Email</th>
+                            <th scope="col" width="20%">Role</th>
+                            <th scope="col" width="25%" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            bool isBlocked = item.Key.LockoutEnd.HasValue && item.Key.LockoutEnd.Value > DateTimeOffset.Now;
+                            string rowClass = isBlocked ? "bg-danger bg-opacity-10" : "";
+
+                            <tr class="@rowClass">
+                                <th scope="row" class="text-light">@item.Key.Id</th>
+                                <td class="text-light">
+                                    @item.Key.UserName
+                                    @if (isBlocked)
+                                    {
+                                        <span class="badge bg-danger ms-2">Blocked</span>
+                                    }
+                                </td>
+                                <td class="text-light">@item.Key.Email</td>
+                                <td>
+                                    <span class="badge bg-primary">@item.Value</span>
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a href="/Admin/User/ChangeRole/@item.Key.Id" class="btn btn-sm btn-warning" title="Change Role">
+                                            <i class="fas fa-user-shield"></i>
+                                        </a>
+                                        
+                                        @if (item.Key.LockoutEnabled)
+                                        {
+                                            <button onclick="confirmBlock('@item.Key.Id')" class="btn btn-sm btn-danger" title="Block User">
+                                                <i class="fas fa-lock"></i>
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button onclick="confirmUnblock('@item.Key.Id')" class="btn btn-sm btn-success" title="Unblock User">
+                                                <i class="fas fa-lock-open"></i>
+                                            </button>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmBlock(id) {
+        Swal.fire({
+            title: 'Block User?',
+            text: "This user will be blocked from accessing the system!",
+            icon: 'warning',
+            background: '#1a1a1a',
+            color: '#fff',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Yes, block!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `/Admin/User/LockUnLock/${id}`;
+            }
+        });
+    }
+
+    function confirmUnblock(id) {
+        Swal.fire({
+            title: 'Unblock User?',
+            text: "This user will regain access to the system!",
+            icon: 'info',
+            background: '#1a1a1a',
+            color: '#fff',
+            showCancelButton: true,
+            confirmButtonColor: '#28a745',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Yes, unblock!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `/Admin/User/LockUnLock/${id}`;
+            }
+        });
+    }
+</script>
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    
+    .card {
+        border: 1px solid #333;
+    }
+    
+    .table-dark {
+        --bs-table-bg: #1a1a1a;
+        --bs-table-striped-bg: #1f1f1f;
+        --bs-table-hover-bg: #252525;
+        color: #fff;
+    }
+    
+    .table-dark th,
+    .table-dark td,
+    .table-dark thead th {
+        border-color: #333;
+    }
+    
+    .bg-secondary {
+        background-color: #2a2a2a !important;
+    }
+    
+    .badge.bg-primary {
+        background-color: #3a5ba0 !important;
+    }
+    
+    .btn-success {
+        background-color: #2e7d32;
+        border-color: #2e7d32;
+    }
+    
+    .btn-success:hover {
+        background-color: #1b5e20;
+        border-color: #1b5e20;
+    }
+</style>

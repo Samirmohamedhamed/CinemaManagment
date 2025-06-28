@@ -1,0 +1,226 @@
+﻿@model RelatedFilmsVM
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/StyleDetails.css" asp-append-version="true" />
+}
+
+<!-- Main Film Details Section -->
+<div class="container py-5">
+    <div class="film-details-container">
+        <div class="row g-0">
+            <!-- Film Poster Column - Now replaced with Carousel -->
+            <div class="col-lg-5 film-poster-container">
+                <div id="filmCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100 rounded-3">
+                        @if (Model.film.images != null && Model.film.images.Count > 0)
+                        {
+                            @for (int i = 0; i < Model.film.images.Count; i++)
+                            {
+                                <div class="carousel-item h-100 @(i == 0 ? "active" : "")">
+                                    <img src="~/imagesPoster/@Model.film.images[i].ImageUrl"
+                                         alt="@Model.film.Title Poster"
+                                         class="d-block w-100 h-100 object-fit-cover rounded-3">
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div>
+                        @if (Model.film.images != null && Model.film.images.Count > 1)
+                        {
+                            <button class="carousel-control-prev" type="button" data-bs-target="#filmCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#filmCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!-- Film Details Column -->
+            <div class="col-lg-7 film-info-section">
+                <h1 class="film-title">@Model.film.Title</h1>
+
+                <div class="detail-item">
+                    <span class="genre-badge">@Model.film.Genre</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-label">Description</span>
+                    <p class="detail-value">@Model.film.Description</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 detail-item">
+                        <span class="detail-label">Duration</span>
+                        <p class="detail-value">
+                            <i class="far fa-clock me-2"></i>@Model.film.DurationInMinutes minutes
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 detail-item">
+                        <span class="detail-label">Budget</span>
+                        <p class="detail-value text-success">
+                            <i class="fas fa-money-bill-wave me-2"></i>@Model.film.Budget?.ToString("C")
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 detail-item">
+                        <span class="detail-label">Language</span>
+                        <p class="detail-value">
+                            <i class="fas fa-language me-2"></i>@Model.film.Language
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 detail-item">
+                        <span class="detail-label">Release Date</span>
+                        <p class="detail-value">
+                            <i class="far fa-calendar-alt me-2"></i>@Model.film.ReleaseDate.ToString("yyyy-MM-dd")
+                        </p>
+                    </div>
+
+                    <div class="col-12 detail-item">
+                        <span class="detail-label">Cinema</span>
+                        <p class="detail-value">
+                            <i class="fas fa-map-marker-alt me-2"></i>@Model.film.Cinemaa?.Name
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Price and Buy Button Section -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="detail-item bg-light p-3 rounded">
+                            <span class="detail-label">Price</span>
+                            <p class="detail-value text-success fw-bold fs-4">
+                                @Model.film.Budget
+                            </p>
+                        </div>
+                        <div class="d-flex">
+                            <form asp-action="AddToCart" asp-controller="Cart" asp-area="Spectator">
+                                <input type="hidden" name="filmId" value="@Model.film.Id" />
+                                <input class="form-control text-center me-3" id="inputQuantity" type="number" value="1" style="max-width: 3rem" name="count" required />
+                                <input class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                            </form>
+                        </div>
+
+                <!-- Actors Section -->
+                <div class="mt-4">
+                    <h4 class="mb-4" style="color: #ffa502;">
+                        <i class="fas fa-users me-2"></i>Cast
+                    </h4>
+
+                    <div class="row">
+                        @foreach (var actor in Model.film.FilmActors)
+                        {
+                            <div class="col-6 col-md-4 col-lg-3 mb-3">
+                                <div class="actor-card text-center"
+                                     onclick="window.location.href='/Spectator/Home/ActorDetails/@actor.ActorId'"
+                                     style="cursor: pointer;">
+                                    <img src="~/image/@actor.Actor.ImageUrl"
+                                         alt="@actor.Actor.FullName"
+                                         class="actor-img mb-2" />
+                                    <h6 class="mb-0">@actor.Actor.FullName</h6>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <a href="/Spectator/Home/Index" class="back-btn">
+                        <i class="fas fa-arrow-left me-2"></i>Back to All Films
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Related Films Section -->
+<div class="container pb-5">
+    <h2 class="section-header">Similar Films</h2>
+
+    <div class="row">
+        @foreach (var item in Model.Relatedfilms)
+        {
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="related-film-card">
+                    <img src="~/imagesPoster/@item.images[0].ImageUrl"
+                         alt="@item.Title"
+                         class="film-card-img w-100" />
+                    <div class="film-card-body">
+                        <h5 class="film-card-title">@item.Title</h5>
+
+                        <div class="mb-3">
+                            <span class="detail-badge">
+                                <i class="fas fa-film me-1"></i>@item.Genre
+                            </span>
+                            <span class="detail-badge">
+                                <i class="far fa-clock me-1"></i>@item.DurationInMinutes min
+                            </span>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="/Spectator/Home/Details/@item.Id"
+                               class="btn btn-sm btn-outline-warning w-100">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Same Actor Films Section -->
+<div class="container pb-5">
+    <h2 class="section-header">Films With Same Actors</h2>
+
+    <div class="row">
+        @foreach (var item in Model.SameActorFilms)
+        {
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="related-film-card">
+                    <img src="~/imagesPoster/@item.images[0].ImageUrl"
+                         alt="@item.Title"
+                         class="film-card-img w-100" />
+                    <div class="film-card-body">
+                        <h5 class="film-card-title">@item.Title</h5>
+
+                        <div class="mb-3">
+                            <span class="detail-badge">
+                                <i class="fas fa-film me-1"></i>@item.Genre
+                            </span>
+                            <span class="detail-badge">
+                                <i class="far fa-clock me-1"></i>@item.DurationInMinutes min
+                            </span>
+                        </div>
+
+                        <div class="same-actors-container mb-2">
+                            @foreach (var sameActor in item.FilmActors)
+                            {
+                                if (Model.film.FilmActors.Any(fa => fa.ActorId == sameActor.ActorId))
+                                {
+                                    <span class="detail-badge same-actor-badge">
+                                        <i class="fas fa-user me-1"></i>@sameActor.Actor.FullName
+                                    </span>
+                                }
+                            }
+                        </div>
+
+                        <div class="text-center">
+                            <a href="/Spectator/Home/Details/@item.Id"
+                               class="btn btn-sm btn-outline-warning w-100">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

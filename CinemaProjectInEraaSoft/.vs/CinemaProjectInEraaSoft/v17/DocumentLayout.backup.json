@@ -1,0 +1,239 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\utility\\stripesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\utility\\stripesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\utility\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\utility\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\areas\\spectator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\areas\\spectator\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\areas\\spectator\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\areas\\spectator\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\areas\\spectator\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\areas\\spectator\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\areas\\spectator\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\areas\\spectator\\controllers\\favoritecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\areas\\spectator\\views\\favorite\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\areas\\spectator\\views\\favorite\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\models\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\models\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|d:\\c#\\eraa_soft_tasks\\cinemaprojectineraasoft\\cinema\\areas\\spectator\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3F8A819-101F-4C24-8423-CEE58B3C9053}|Cinema\\Cinema.csproj|solutionrelative:cinema\\areas\\spectator\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Cinema\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Cinema\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T18:15:19.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StripeSettings.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Utility\\StripeSettings.cs",
+              "RelativeDocumentMoniker": "Cinema\\Utility\\StripeSettings.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Utility\\StripeSettings.cs",
+              "RelativeToolTip": "Cinema\\Utility\\StripeSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T18:15:14.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmailSender.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Utility\\EmailSender.cs",
+              "RelativeDocumentMoniker": "Cinema\\Utility\\EmailSender.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Utility\\EmailSender.cs",
+              "RelativeToolTip": "Cinema\\Utility\\EmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T18:15:06.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\appsettings.json",
+              "RelativeDocumentMoniker": "Cinema\\appsettings.json",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\appsettings.json",
+              "RelativeToolTip": "Cinema\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-27T18:05:53.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Cinema\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T16:24:14.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Views\\Cart\\Index.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Areas\\Spectator\\Views\\Cart\\Index.cshtml",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Views\\Cart\\Index.cshtml",
+              "RelativeToolTip": "Cinema\\Areas\\Spectator\\Views\\Cart\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T16:13:46.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Areas\\Spectator\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Controllers\\CartController.cs",
+              "RelativeToolTip": "Cinema\\Areas\\Spectator\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAcwGYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:52:15.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Views\\Favorite\\Index.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Areas\\Spectator\\Views\\Favorite\\Index.cshtml",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Views\\Favorite\\Index.cshtml",
+              "RelativeToolTip": "Cinema\\Areas\\Spectator\\Views\\Favorite\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T15:24:56.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Favorite.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Models\\Favorite.cs",
+              "RelativeDocumentMoniker": "Cinema\\Models\\Favorite.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Models\\Favorite.cs",
+              "RelativeToolTip": "Cinema\\Models\\Favorite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:22:45.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FavoriteController.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Controllers\\FavoriteController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Areas\\Spectator\\Controllers\\FavoriteController.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Controllers\\FavoriteController.cs",
+              "RelativeToolTip": "Cinema\\Areas\\Spectator\\Controllers\\FavoriteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T15:09:31.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Cinema\\Areas\\Spectator\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Cinema\\Areas\\Spectator\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-31T14:52:47.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Program.cs",
+              "RelativeDocumentMoniker": "Cinema\\Program.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Program.cs",
+              "RelativeToolTip": "Cinema\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwCgAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T16:12:31.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CheckOutController.cs",
+              "DocumentMoniker": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Controllers\\CheckOutController.cs",
+              "RelativeDocumentMoniker": "Cinema\\Areas\\Spectator\\Controllers\\CheckOutController.cs",
+              "ToolTip": "D:\\c#\\Eraa_Soft_Tasks\\CinemaProjectInEraaSoft\\Cinema\\Areas\\Spectator\\Controllers\\CheckOutController.cs",
+              "RelativeToolTip": "Cinema\\Areas\\Spectator\\Controllers\\CheckOutController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T15:21:59.615Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

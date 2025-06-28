@@ -1,0 +1,94 @@
+﻿@model Actor
+
+@{
+    ViewData["Title"] = "Actor Details";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ActorDetails.css" asp-append-version="true" />
+
+}
+
+<div class="container py-5">
+    <!-- Actor Main Info -->
+    <div class="actor-container d-flex">
+        <div>
+            <img src="~/image/@Model.ImageUrl" alt="@Model.FullName" class="actor-image" />
+        </div>
+
+        <div class="actor-info">
+            <h1 class="actor-name">@Model.FullName</h1>
+
+            <div class="actor-detail">
+                <span class="detail-label">Nickname:</span>
+                <span>@Model.Nickname</span>
+            </div>
+
+            <div class="actor-detail">
+                <span class="detail-label">Date of Birth:</span>
+                <span>@Model.DateOfBirth.ToString("yyyy-MM-dd")</span>
+            </div>
+
+            <div class="actor-detail">
+                <span class="detail-label">Nationality:</span>
+                <span>@Model.Nationality</span>
+            </div>
+
+            <div class="actor-detail">
+                <span class="detail-label">Gender:</span>
+                <span>@Model.Gender</span>
+            </div>
+
+            <div class="actor-detail">
+                <span class="detail-label">Biography:</span>
+                <p style="margin-top: 10px;">@Model.Biography</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actor's Films -->
+    <div class="films-section">
+        <h2 style="color: #ffa502; margin-bottom: 30px;">
+            <i class="fas fa-film"></i> Filmography
+        </h2>
+
+        @foreach (var filmActor in Model.FilmActors)
+        {
+            var film = filmActor.Film;
+
+            <div class="film-card">
+                <img src="~/imagesPoster/@film.PosterUrl"
+                     alt="@film.Title"
+                     class="film-poster" />
+
+                <div class="film-details">
+                    <h3 class="film-title">@film.Title</h3>
+
+                    <div class="film-meta">
+                        <span><i class="far fa-calendar-alt"></i> @film.ReleaseDate.ToString("yyyy-MM-dd")</span>
+                        <span><i class="fas fa-film"></i> @film.Genre</span>
+                        <span><i class="far fa-clock"></i> @film.DurationInMinutes min</span>
+                        <span><i class="fas fa-language"></i> @film.Language</span>
+                        @if (!string.IsNullOrEmpty(film.Rating))
+                        {
+                            <span><i class="fas fa-star"></i> @film.Rating</span>
+                        }
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(film.Description))
+                    {
+                        <p style="margin-bottom: 15px;">@film.Description</p>
+                    }
+
+                    <a asp-action="Details"
+                       asp-controller="Home"
+                       asp-route-id="@filmActor.FilmId"
+                       class="view-details-btn">
+                        <i class="fas fa-info-circle"></i> View Film Details
+                    </a>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        }
+    </div>
+</div>

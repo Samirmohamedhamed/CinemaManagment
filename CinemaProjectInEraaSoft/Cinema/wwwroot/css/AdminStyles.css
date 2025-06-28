@@ -1,0 +1,95 @@
+﻿/* Dark Header Styles */
+.sb-topnav {
+    background-color: #1a1a1a !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #fff !important;
+}
+
+    .navbar-brand i {
+        color: #d81f26;
+        transition: color 0.3s ease;
+    }
+
+.sb-topnav .input-group {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.sb-topnav .form-control {
+    background-color: #2a2a2a;
+    border: none;
+    color: #fff;
+    padding: 0.375rem 1rem;
+}
+
+    .sb-topnav .form-control:focus {
+        background-color: #333;
+        color: #fff;
+        box-shadow: none;
+    }
+
+.sb-topnav .btn-light {
+    background-color: #d81f26;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .sb-topnav .btn-light:hover {
+        background-color: #b71c1c;
+    }
+
+.sb-topnav .dropdown-menu {
+    background-color: #2a2a2a;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.sb-topnav .dropdown-item {
+    color: #ddd;
+    transition: all 0.2s ease;
+}
+
+    .sb-topnav .dropdown-item:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+.sb-topnav .dropdown-divider {
+    border-color: #444;
+}
+
+/* Sidebar Hover Effects */
+.sb-sidenav-dark .nav-link {
+    transition: all 0.3s ease;
+}
+
+    .sb-sidenav-dark .nav-link:hover {
+        color: #d81f26 !important;
+    }
+
+    .sb-sidenav-dark .nav-link .sb-nav-link-icon {
+        transition: all 0.3s ease;
+    }
+
+    .sb-sidenav-dark .nav-link:hover .sb-nav-link-icon {
+        color: #d81f26 !important;
+    }
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .sb-topnav .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .sb-topnav .input-group {
+        width: 180px;
+    }
+}

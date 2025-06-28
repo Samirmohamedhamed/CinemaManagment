@@ -1,0 +1,255 @@
+﻿                            @model IEnumerable<Film>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/films.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <style>
+        /* تحسينات لزر المفضلة */
+        .favorite-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            color: #dc3545;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: all 0.3s ease;
+            border: 2px solid #dc3545;
+        }
+
+            .favorite-btn:hover {
+                background: #dc3545;
+                color: white;
+                transform: scale(1.1);
+                box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+            }
+
+            .favorite-btn.active {
+                background: #dc3545;
+                color: white;
+            }
+
+            .favorite-btn i {
+                transition: all 0.3s ease;
+            }
+
+        /* تأثير عند النقر */
+        keyframes heartBeat {
+            0%
+
+        {
+            transform: scale(1);
+        }
+
+        25% {
+            transform: scale(1.3);
+        }
+
+        50% {
+            transform: scale(1);
+        }
+
+        75% {
+            transform: scale(1.3);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+
+        }
+
+        .favorite-btn.clicked {
+            animation: heartBeat 0.6s;
+        }
+    </style>
+}
+
+@section Scripts {
+    @if (TempData["Notfication"] is not null)
+    {
+        <script>
+            toastr.success('@TempData["Notfication"]');
+        </script>
+    }
+    @if (TempData["NotficationError"] is not null)
+    {
+        <script>
+            toastr.error('@TempData["NotficationError"]');
+        </script>
+    }
+}
+
+<!-- Hero Section -->
+<section class="cinema-hero text-white">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">Explore Films</h1>
+        <p class="lead mb-0">Discover your favorite films</p>
+    </div>
+
+    <div class="mt-4">
+        <a href="/Spectator/Favorite/Index" class="btn btn-danger btn-lg">
+            <i class="fas fa-heart me-2"></i> View My Favorites
+        </a>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="filter-section py-4">
+    <div class="container">
+        <form class="filter-form">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label text-white">Genre</label>
+                    <select name="genre" class="form-select">
+                        <option value="">All Genres</option>
+                        @if (ViewData["films"] is List<Film> genres)
+                        {
+                            foreach (var item in genres)
+                            {
+                                <option value="@item.Genre" selected="@(item.Genre == ViewBag.genre ? "selected" : "")">@item.Genre</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label text-white">Search</label>
+                    <input type="text" class="form-control" placeholder="Film name" name="NameOfFilm" value="@ViewBag.nameOfFilm" />
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label text-white">Actor</label>
+                    <input type="text" class="form-control" placeholder="Actor name" name="NameOfActor" value="@ViewBag.nameOfActor" />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-danger w-100">
+                        <i class="fas fa-filter me-1"></i> Filter
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Films Grid -->
+<section class="films-grid py-5">
+    <div class="container">
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="film-card card h-100 shadow-sm">
+                        <div class="position-relative">
+                            <!-- Favorite Button (Top Right) -->
+                            <a href="/Spectator/Favorite/AddToFavorites/@item.Id" class="favorite-btn position-absolute top-0 end-0 m-2" title="Add to favorites">
+                                <i class="far fa-heart"></i>
+                            </a>
+
+                            <div class="genre-badge">@item.Genre</div>
+
+                            <img src="@(item.images != null && item.images.Any() ? Url.Content("~/imagesPoster/" + item.images[0].ImageUrl) : Url.Content("~/imagesPoster/default.png"))"
+                                 class="card-img-top" alt="@item.Title" />
+
+                            <div class="film-overlay d-flex align-items-center justify-content-center">
+                                <a href="/Spectator/Home/Details/@item.Id" class="btn btn-outline-light">
+                                    <i class="fas fa-info-circle me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">@item.Title</h5>
+
+                            @if (item.CinemaaId == item.Cinemaa?.Id)
+                            {
+                                <div class="cinema-info mb-2">
+                                    <span class="text-muted small">
+                                        <i class="fas fa-map-marker-alt me-1"></i> @item.Cinemaa?.Name
+                                    </span>
+                                </div>
+                            }
+
+                            <div class="ticket-info mb-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-ticket-alt me-1"></i> @item.CountOfTicket Available
+                                    </span>
+                                    <span class="badge bg-primary">
+                                        <i class="fas fa-tag me-1"></i> @item.PriceOfTicket.ToString("C")
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-warning">
+                                    <i class="fas fa-star"></i> @item.Rating
+                                </span>
+                                <span class="text-muted small">
+                                    <i class="far fa-clock"></i> @item.DurationInMinutes min
+                                </span>
+                            </div>
+
+                            <div class="film-meta mb-2">
+                                <span class="badge bg-secondary">
+                                    <i class="fas fa-language me-1"></i> @item.Language
+                                </span>
+                            </div>
+
+                            @if (item.Budget is not null)
+                            {
+                                <div class="film-budget mb-2">
+                                    <span class="badge bg-success">
+                                        <i class="fas fa-money-bill-wave me-1"></i> @item.Budget.Value.ToString("C")
+                                    </span>
+                                </div>
+                            }
+
+                            @if (!string.IsNullOrEmpty(item.Description))
+                            {
+                                <p class="card-text text-muted small mb-3">@item.Description</p>
+                            }
+
+                            @if (item.FilmActors != null && item.FilmActors.Any())
+                            {
+                                <div class="film-actors mt-auto">
+                                    <h6 class="small fw-bold mb-2">Actors:</h6>
+                                    <div class="actors-list">
+                                        @foreach (var actor in item.FilmActors)
+                                        {
+                                            if (actor.FilmId == item.Id)
+                                            {
+                                                <div class="actor-item d-flex align-items-center mb-2">
+                                                    <a href="/Spectator/Home/ActorDetails/@actor.ActorId">
+                                                        <img src="~/image/@actor.Actor.ImageUrl" alt="@actor.Actor.FullName" class="rounded-circle me-2" width="30" height="30" />
+                                                        <span>@actor.Actor.FullName</span>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            }
+
+                            <!-- Add to Cart Button -->
+                            <div class="mt-3">
+                                <a href="@Url.Action("AddToCart", "Cart", new { area = "Spectator", filmId = item.Id, count = 1 })"
+                                   class="btn btn-primary w-100">
+                                    <i class="fas fa-cart-plus me-1"></i> Add to Cart
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+

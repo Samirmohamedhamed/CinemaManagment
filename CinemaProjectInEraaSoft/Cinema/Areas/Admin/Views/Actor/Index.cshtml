@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Actor>
+
+<div class="container py-4">
+    <div class="actor-header">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="actor-title">
+                <i class="fas fa-users me-2"></i>All Actors
+            </h1>
+            <a href="/Admin/Actor/Create" class="btn btn-success btn-add">
+                <i class="fas fa-plus-circle me-2"></i>Add New Actor
+            </a>
+        </div>
+    </div>
+
+    <div class="actor-table-container">
+        <div class="table-responsive">
+            <table class="table actor-table table-hover align-middle">
+                <thead class="actor-table-header">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Nickname</th>
+                        <th scope="col">Date of Birth</th>
+                        <th scope="col">Nationality</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col" class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="actor-table-row">
+                            <th scope="row" class="actor-id">@item.Id</th>
+                            <td class="actor-name">@item.FullName</td>
+                            <td class="actor-nickname">@(item.Nickname ?? "-")</td>
+                            <td class="actor-dob">@item.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                            <td class="actor-nationality">@item.Nationality</td>
+                            <td class="actor-gender">@item.Gender</td>
+                            <td class="text-end">
+                                <div class="action-buttons">
+                                    <a href="/Admin/Actor/Edit/@item.Id" class="btn btn-sm btn-edit">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <a href="javascript:void(0);" onclick="confirmDelete(@item.Id)" class="btn btn-sm btn-delete">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Delete Actor?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel',
+            backdrop: `
+                rgba(0,0,0,0.7)
+                url("/images/actor-popup.gif")
+                center top
+                no-repeat
+            `,
+            customClass: {
+                confirmButton: 'btn btn-danger px-4',
+                cancelButton: 'btn btn-secondary px-4'
+            },
+            buttonsStyling: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Show loading animation
+                Swal.fire({
+                    title: 'Deleting...',
+                    html: 'Please wait while we delete the actor',
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading()
+                    }
+                });
+
+                // Redirect after delay for better UX
+                setTimeout(() => {
+                    window.location.href = `/Admin/Actor/Delete/${id}`;
+                }, 1000);
+            }
+        });
+    }
+
+    // Add animation to table rows
+    document.addEventListener('DOMContentLoaded', function () {
+        const rows = document.querySelectorAll('.actor-table-row');
+
+        rows.forEach((row, index) => {
+            // Add delay based on row index
+            row.style.animationDelay = `${index * 0.05}s`;
+            row.classList.add('animate__animated', 'animate__fadeInUp');
+        });
+    });
+</script>

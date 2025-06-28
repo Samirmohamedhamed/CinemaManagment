@@ -1,0 +1,72 @@
+﻿@using Cinema.Models.ViewModel
+@model UserWithRoleVM
+
+@section Scripts {
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <div class="display-6">Edit User</div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Admin/Dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/Admin/User">Users</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="post">
+                        <input type="hidden" asp-for="@Model.ApplicationUser.Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="ApplicationUser.UserName" class="form-label fw-bold">Username</label>
+                            <input type="text" class="form-control" asp-for="ApplicationUser.UserName">
+                            <span asp-validation-for="ApplicationUser.UserName" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <input type="text" class="form-control" value="@Model.ApplicationUser.Email" disabled>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Role</label>
+                            <select class="form-select" name="role">
+                                <option value="">@Model.CurrentRole</option>
+
+                                @if (Model.identityRoles is not null)
+                                {
+                                    @foreach (var item in Model.identityRoles)
+                                    {
+                                       <option value="@item.Name">@item.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">NO Role</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="/Admin/User" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-1"></i> Back to List
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-1"></i> Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
